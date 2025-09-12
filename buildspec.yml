@@ -1,39 +1,54 @@
 version: 0.2
 
+env:
+  variables:
+    # Define the S3 bucket for storing detailed analysis reports
+    S3_BUCKET: "my-devops-sonarless-reports"
+
 phases:
   install:
     runtime-versions:
+      # Using the more modern Java 17 runtime
       java: corretto17
-    commands:
-      - echo "Installing Maven"
-      - curl -sL https://downloads.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz | tar -xz -C /opt
-      - ln -s /opt/apache-maven-3.9.9 /opt/maven
-      - export PATH=/opt/maven/bin:$PATH
-      - mvn -version
-
-  pre_build:
-    commands:
-      - echo "Running unit tests"
-      - mvn -B -q -DskipTests=false test
 
   build:
     commands:
-      - echo "Static analysis: Checkstyle, PMD, SpotBugs"
-      - mvn -B -q verify
-      # If you want individual phases:
-      # - mvn -B -q checkstyle:check pmd:check spotbugs:check surefire-report:report
+      - echo "Running Maven build, quality checks, and site generation..."
+      # Use 'verify' as it's the standard for CI. It runs all checks without the unnecessary 'install' step.
+      - mvn clean verify site
 
   post_build:
     commands:
-      - echo "Collecting reports"
-      - mkdir -p reports/checkstyle reports/pmd reports/spotbugs reports/tests
-      - cp -r target/checkstyle* reports/checkstyle/ || true
-      - cp -r target/pmd*        reports/pmd/        || true
-      - cp -r target/spotbugs*   reports/spotbugs/   || true
-      - cp -r target/surefire-reports reports/tests/ || true
+      - echo "Uploading detailed HTML reports to S3 for archiving..."
+      # Use the build ID to give each report a unique folder in S3
+      - aws s3 cp target/site/ s3://$S3_BUCKET/analysis-reports/$CODEBUILD_BUILD_ID/ --recursive
+      - echo "Reports successfully archived in S3."
+
+# This block provides native test and coverage reporting in the CodeBuild UI.
+# It is a BEST PRACTICE for visibility and quick feedback.
+reports:
+  TestReports:
+    files:
+      - '**/surefire-reports/TEST-*.xml'
+    file-format: 'JUNITXML'
+  CoverageReports:
+    files:
+      - '**/jacoco.xml'
+    file-format: 'JACOCOXML'
 
 artifacts:
   files:
-    - reports/**/*
-    - target/**/*
-  discard-paths: no
+    # This is the application JAR for the CodeDeploy stage.
+    # Using a wildcard is MORE STABLE than a hardcoded name.
+    - 'target/*.jar'
+    # These are needed for the CodeDeploy stage
+    - 'appspec.yml'
+    - 'scripts/**/*'
+  # Note: The reports are uploaded to S3, so they don't strictly need to be in the final artifact ZIP,
+  # but keeping them can be useful for quick downloads from the CodePipeline console.
+  # If you want to reduce artifact size, you could remove the 'target/site/**/*' from here.
+  secondary-artifacts:
+    ReportsArtifact:
+      files:
+        - 'target/site/**/*'
+      discard-paths: yes
