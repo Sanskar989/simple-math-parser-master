@@ -1,0 +1,39 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - echo "Installing Maven"
+      - curl -sL https://downloads.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz | tar -xz -C /opt
+      - ln -s /opt/apache-maven-3.9.9 /opt/maven
+      - export PATH=/opt/maven/bin:$PATH
+      - mvn -version
+
+  pre_build:
+    commands:
+      - echo "Running unit tests"
+      - mvn -B -q -DskipTests=false test
+
+  build:
+    commands:
+      - echo "Static analysis: Checkstyle, PMD, SpotBugs"
+      - mvn -B -q verify
+      # If you want individual phases:
+      # - mvn -B -q checkstyle:check pmd:check spotbugs:check surefire-report:report
+
+  post_build:
+    commands:
+      - echo "Collecting reports"
+      - mkdir -p reports/checkstyle reports/pmd reports/spotbugs reports/tests
+      - cp -r target/checkstyle* reports/checkstyle/ || true
+      - cp -r target/pmd*        reports/pmd/        || true
+      - cp -r target/spotbugs*   reports/spotbugs/   || true
+      - cp -r target/surefire-reports reports/tests/ || true
+
+artifacts:
+  files:
+    - reports/**/*
+    - target/**/*
+  discard-paths: no
