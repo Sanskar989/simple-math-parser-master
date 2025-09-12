@@ -1,4 +1,4 @@
-package mathNode;
+package main.java.mathNode;
 
 /**
  * This factory builds math nodes.

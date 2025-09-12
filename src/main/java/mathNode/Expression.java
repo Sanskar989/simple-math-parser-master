@@ -1,4 +1,4 @@
-package mathNode;
+package main.java.mathNode;
 
 /**
  * Abstract expression node class.

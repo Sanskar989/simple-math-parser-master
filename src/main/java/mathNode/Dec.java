@@ -1,21 +1,21 @@
-package mathNode;
+package main.java.mathNode;
 
 /**
- * Node that holds integer values.
+ * Node that holds decimal values.
  * @author kevinrobell
  *
  */
-public class Int extends Expression
+public class Dec extends Expression
 {
-   private int value;
+   private double value;
    
-   public Int(int value) { this.value = value; }
+   public Dec(double value) { this.value = value; }
 
    public Number calculate() { return value; }
 
    public String toString() 
    { 
-      String str = Integer.toString(value); 
+      String str = Double.toString(value); 
       
       if(isParens())
          return '(' + str + ')';
@@ -26,10 +26,9 @@ public class Int extends Expression
    @Override
    public Object clone() throws CloneNotSupportedException
    {
-      return (Int) super.clone();
+      return (Dec) super.clone();
    }
-
+   
    @Override
    public boolean checkTree() { return true; }
-   
 }

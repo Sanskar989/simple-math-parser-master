@@ -1,4 +1,4 @@
-package test;
+package test.java.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import mathTree.MathTree;
+import main.java.mathTree.MathTree;
 
 //Tests for the MathTree.java class in the mathTree package.
 

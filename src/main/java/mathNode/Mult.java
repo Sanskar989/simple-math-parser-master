@@ -1,30 +1,30 @@
-package mathNode;
+package main.java.mathNode;
 
 /**
- * Node for subtraction operator.
+ * Node for multiplication operator.
  * @author kevinrobell
  *
  */
-public class Sub extends Operator
+public class Mult extends Operator
 {
-   public Sub() { precedence = 3; }
+   public Mult() { precedence = 2; }
    
    public Number calculate()
    {
       Number leftNum = getLeftNode().calculate();
       Number rightNum = getRightNode().calculate();
       
-      //If both values below it are integers do integer subtraction.
+      //If both numbers below it on the tree are integers, do integer multiplication.
       if(leftNum instanceof Integer && rightNum instanceof Integer)
-         return leftNum.intValue() - rightNum.intValue();
+         return leftNum.intValue() * rightNum.intValue();
       
-      //Otherwise do double subtraction.
-      return leftNum.doubleValue() - rightNum.doubleValue();
+      //Otherwise do decimal multiplication.
+      return leftNum.doubleValue() * rightNum.doubleValue();
    }
    
    public String toString()
    {
-      String str = getLeftNode().toString() + " - " + getRightNode().toString();
+      String str = getLeftNode().toString() + " * " + getRightNode().toString();
       
       if(isParens())
          return '(' + str + ')';
@@ -35,7 +35,7 @@ public class Sub extends Operator
    @Override
    public Object clone() throws CloneNotSupportedException
    {
-      Sub clone = (Sub) super.clone();
+      Mult clone = (Mult) super.clone();
       clone.setLeftNode((Expression) this.getLeftNode().clone());
       clone.setRightNode((Expression) this.getRightNode().clone());
       return clone;

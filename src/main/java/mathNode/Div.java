@@ -1,22 +1,22 @@
-package mathNode;
+package main.java.mathNode;
 
 /**
- * Node for exponent operator.
+ * Node for division operator.
  * @author kevinrobell
  *
  */
-public class Pow extends Operator
+public class Div extends Operator
 {
-   public Pow() { precedence = 1; }
+   public Div() { precedence = 2; }
    
    public Number calculate()
    {
-      return Math.pow(getLeftNode().calculate().doubleValue(), getRightNode().calculate().doubleValue());
+      return getLeftNode().calculate().doubleValue() / getRightNode().calculate().doubleValue();
    }
    
    public String toString()
    {
-      String str = getLeftNode().toString() + " ^ " + getRightNode().toString();
+      String str = getLeftNode().toString() + " / " + getRightNode().toString();
       
       if(isParens())
          return '(' + str + ')';
@@ -27,7 +27,7 @@ public class Pow extends Operator
    @Override
    public Object clone() throws CloneNotSupportedException
    {
-      Pow clone = (Pow) super.clone();
+      Div clone = (Div) super.clone();
       clone.setLeftNode((Expression) this.getLeftNode().clone());
       clone.setRightNode((Expression) this.getRightNode().clone());
       return clone;

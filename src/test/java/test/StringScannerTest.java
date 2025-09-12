@@ -1,4 +1,4 @@
-package test;
+package test.java.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import mathTree.StringScanner;
+import main.java.mathTree.StringScanner;
 
 //Tests for the StringScanner.java class in the mathTree package.
 

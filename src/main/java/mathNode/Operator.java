@@ -1,4 +1,4 @@
-package mathNode;
+package main.java.mathNode;
 
 /**
  * An abstract math operator class.

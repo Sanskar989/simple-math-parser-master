@@ -1,4 +1,4 @@
-package mathTree;
+package main.java.mathTree;
 import java.util.LinkedList;
 
 /**
@@ -8,9 +8,9 @@ import java.util.LinkedList;
  */
 public class MathTree implements Cloneable
 {
-   private mathNode.Expression rootNode = null;
+   private main.java.mathNode.Expression rootNode = null;
    private StringScanner strScanner = new StringScanner(); //Set up in the constructor
-   private mathNode.Factory nodeFactory = new mathNode.Factory();
+   private main.java.mathNode.Factory nodeFactory = new main.java.mathNode.Factory();
    
    /**
     * Constructor that sets up the strScanner.
@@ -149,12 +149,12 @@ public class MathTree implements Cloneable
     * @param isParens
     * @return The root node of a new tree of math nodes.
     */
-   private mathNode.Expression buildTree(LinkedList<String> strTokens, boolean isParens)
+   private main.java.mathNode.Expression buildTree(LinkedList<String> strTokens, boolean isParens)
    {
       String token;
-      mathNode.Expression rootNode = null;
+      main.java.mathNode.Expression rootNode = null;
       //mathNode.Expression lastNode = null;
-      mathNode.Expression newNode = null;
+      main.java.mathNode.Expression newNode = null;
       
       while(strTokens.isEmpty() == false) 
       {
@@ -225,8 +225,8 @@ public class MathTree implements Cloneable
     * @param newNode
     * @return Returns root node of tree after node is inserted.
     */
-   private mathNode.Expression insertNode(mathNode.Expression rootNode, 
-         mathNode.Expression newNode)
+   private main.java.mathNode.Expression insertNode(main.java.mathNode.Expression rootNode, 
+         main.java.mathNode.Expression newNode)
    {
       //If no root node, new node becomes the root node.
       if(rootNode == null) 
@@ -235,14 +235,14 @@ public class MathTree implements Cloneable
       else if(newNode == null)
          return rootNode;
       //Place operator node without parenthesis in tree according to precedence.
-      else if(newNode instanceof mathNode.Operator && !newNode.isParens())
+      else if(newNode instanceof main.java.mathNode.Operator && !newNode.isParens())
       {
-         mathNode.Operator newOperator = (mathNode.Operator) newNode;
-         mathNode.Operator parent;
+         main.java.mathNode.Operator newOperator = (main.java.mathNode.Operator) newNode;
+         main.java.mathNode.Operator parent;
          
          //Check if rootNode is an operator
-         if(rootNode instanceof mathNode.Operator)
-            parent = (mathNode.Operator) rootNode;
+         if(rootNode instanceof main.java.mathNode.Operator)
+            parent = (main.java.mathNode.Operator) rootNode;
          else
          {
             newOperator.setLeftNode(rootNode);
@@ -257,9 +257,9 @@ public class MathTree implements Cloneable
          }
          while(parent.getPrecedence() > newOperator.getPrecedence() 
                && parent.getRightNode() != null 
-               && parent.getRightNode() instanceof mathNode.Operator)
+               && parent.getRightNode() instanceof main.java.mathNode.Operator)
          {
-            parent = (mathNode.Operator) parent.getRightNode();
+            parent = (main.java.mathNode.Operator) parent.getRightNode();
          }
          
          //Check if value is missing between two operators.
@@ -281,10 +281,10 @@ public class MathTree implements Cloneable
       //and it is invalid.
       else
       {
-         mathNode.Operator parent;
+         main.java.mathNode.Operator parent;
          
-         if(rootNode instanceof mathNode.Operator)
-            parent = (mathNode.Operator) rootNode;
+         if(rootNode instanceof main.java.mathNode.Operator)
+            parent = (main.java.mathNode.Operator) rootNode;
          else
          {
             System.out.println("Invalid: Missing operator between " + 
@@ -294,8 +294,8 @@ public class MathTree implements Cloneable
          
          while(parent.getRightNode() != null)
          {
-            if(parent.getRightNode() instanceof mathNode.Operator)
-               parent = (mathNode.Operator) parent.getRightNode();
+            if(parent.getRightNode() instanceof main.java.mathNode.Operator)
+               parent = (main.java.mathNode.Operator) parent.getRightNode();
             else
             {
                System.out.println("Invalid: Missing operator between " + 
@@ -336,8 +336,8 @@ public class MathTree implements Cloneable
    public Object clone() throws CloneNotSupportedException
    {
       MathTree clone = (MathTree) super.clone();
-      clone.nodeFactory = (mathNode.Factory) nodeFactory.clone();
-      clone.rootNode = (mathNode.Expression) rootNode.clone();
+      clone.nodeFactory = (main.java.mathNode.Factory) nodeFactory.clone();
+      clone.rootNode = (main.java.mathNode.Expression) rootNode.clone();
       
       return clone;
    }

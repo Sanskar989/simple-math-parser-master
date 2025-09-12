@@ -1,4 +1,4 @@
-package mathTree;
+package main.java.mathTree;
 import java.util.Scanner;
 
 /**

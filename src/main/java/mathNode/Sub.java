@@ -1,30 +1,30 @@
-package mathNode;
+package main.java.mathNode;
 
 /**
- * Node that holdes the addition operator.
+ * Node for subtraction operator.
  * @author kevinrobell
  *
  */
-public class Add extends Operator
+public class Sub extends Operator
 {
-   public Add() { precedence = 3; }
+   public Sub() { precedence = 3; }
    
    public Number calculate()
    {
       Number leftNum = getLeftNode().calculate();
       Number rightNum = getRightNode().calculate();
       
-      //Do integer addition if both nodes below are integers.
+      //If both values below it are integers do integer subtraction.
       if(leftNum instanceof Integer && rightNum instanceof Integer)
-         return leftNum.intValue() + rightNum.intValue();
+         return leftNum.intValue() - rightNum.intValue();
       
-      //Otherwise do decimal addition.
-      return leftNum.doubleValue() + rightNum.doubleValue();
+      //Otherwise do double subtraction.
+      return leftNum.doubleValue() - rightNum.doubleValue();
    }
    
    public String toString()
    {
-      String str = getLeftNode().toString() + " + " + getRightNode().toString();
+      String str = getLeftNode().toString() + " - " + getRightNode().toString();
       
       if(isParens())
          return '(' + str + ')';
@@ -35,7 +35,7 @@ public class Add extends Operator
    @Override
    public Object clone() throws CloneNotSupportedException
    {
-      Add clone = (Add) super.clone();
+      Sub clone = (Sub) super.clone();
       clone.setLeftNode((Expression) this.getLeftNode().clone());
       clone.setRightNode((Expression) this.getRightNode().clone());
       return clone;

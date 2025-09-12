@@ -1,4 +1,4 @@
-package test;
+package test.java.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.LinkedList;
@@ -6,16 +6,16 @@ import java.util.LinkedList;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import mathNode.*;
+import main.java.mathNode.*;
 
 //Tests for the mathNode package.
 
 class MathNodeTest
 {
-   public static mathNode.Factory nodeFactory = new mathNode.Factory();
-   mathNode.Operator opNode;
-   mathNode.Expression leftNode;
-   mathNode.Expression rightNode;
+   public static main.java.mathNode.Factory nodeFactory = new main.java.mathNode.Factory();
+   main.java.mathNode.Operator opNode;
+   main.java.mathNode.Expression leftNode;
+   main.java.mathNode.Expression rightNode;
    
    int[] testInts = {6, 2};
    double[] testDoubles = {4.5, 3};
@@ -23,7 +23,7 @@ class MathNodeTest
    @Test
    public void testAdd()
    {
-      opNode = new mathNode.Add();
+      opNode = new main.java.mathNode.Add();
       
       leftNode = nodeFactory.buildNode(testInts[0]);
       rightNode = nodeFactory.buildNode(testInts[1]);
@@ -45,7 +45,7 @@ class MathNodeTest
    @Test
    public void testSub()
    {
-      opNode = new mathNode.Sub();
+      opNode = new main.java.mathNode.Sub();
       
       leftNode = nodeFactory.buildNode(testInts[0]);
       rightNode = nodeFactory.buildNode(testInts[1]);
@@ -67,7 +67,7 @@ class MathNodeTest
    @Test
    public void testMult()
    {
-      opNode = new mathNode.Mult();
+      opNode = new main.java.mathNode.Mult();
       
       leftNode = nodeFactory.buildNode(testInts[0]);
       rightNode = nodeFactory.buildNode(testInts[1]);
@@ -89,7 +89,7 @@ class MathNodeTest
    @Test
    public void testDiv()
    {
-      opNode = new mathNode.Div();
+      opNode = new main.java.mathNode.Div();
       
       leftNode = nodeFactory.buildNode(testInts[0]);
       rightNode = nodeFactory.buildNode(testInts[1]);
@@ -111,7 +111,7 @@ class MathNodeTest
    @Test
    public void testPow()
    {
-      opNode = new mathNode.Pow();
+      opNode = new main.java.mathNode.Pow();
       
       leftNode = nodeFactory.buildNode(testInts[0]);
       rightNode = nodeFactory.buildNode(testInts[1]);
