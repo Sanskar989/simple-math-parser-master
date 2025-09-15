@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.java.test.StringScannerTest" time="0.026" tests="4" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\simple-math-parser-master\target\test-classes;C:\simple-math-parser-master\target\classes;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.15_6\bin"/>
+    <property name="sun.java.command" value="C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Temp\surefire11498074455133766554\surefirebooter-20250915131119829_3.jar C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Temp\surefire11498074455133766554 2025-09-15T13-11-18_873-jvmRun1 surefire-20250915131119829_1tmp surefire_0-20250915131119829_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\simple-math-parser-master\target\test-classes;C:\simple-math-parser-master\target\classes;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\Minfy.ABHINANDANKALLU\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Minfy.ABHINANDANKALLU"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk17.0.15_6"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\simple-math-parser-master"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Temp\surefire11498074455133766554\surefirebooter-20250915131119829_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.15+6-LTS"/>
+    <property name="user.name" value="Minfy"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Corretto-17.0.15.6.1"/>
+    <property name="localRepository" value="C:\Users\Minfy.ABHINANDANKALLU\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-17/issues/"/>
+    <property name="java.io.tmpdir" value="C:\Users\MINFY~1.ABH\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.15"/>
+    <property name="user.dir" value="C:\simple-math-parser-master"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.15_6\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Minfy.ABHINANDANKALLU\.local\bin;C:\Users\Minfy.ABHINANDANKALLU\.local\bin;C:\Users\Minfy.ABHINANDANKALLU\.local\bin;C:\Users\Minfy.ABHINANDANKALLU\.local\bin;C:\Users\Minfy.ABHINANDANKALLU\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Minfy.ABHINANDANKALLU\bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.26.4-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\Minfy.DESKTOP-Q2IEKBP\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\PuTTY;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Minfy.ABHINANDANKALLU\Downloads\terraform_1.12.1_windows_386;C:\Program Files\MongoDB\mongosh\bin;C:\Program Files\MongoDB\Server\8.0\bin;C:\Program Files\PostgreSQL\17\bin;C:\Program Files\Amazon\AWSCLIV2;C:\Program Files\nodejs;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Programs\Python\Python313\Scripts;C:\Users\Minfy.ABHINANDANKALLU\Downloads\prometheus-3.5.0.windows-amd64\prometheus-3.5.0.windows-amd64;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Programs\Python\Python313\Scripts;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Programs\Python\Python313;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Microsoft\WindowsApps;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Progr;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.11\bin;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Programs\Python\Python313\Scripts;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Programs\Python\Python313;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Microsoft\WindowsApps;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\GitHubDesktop\bin;C:\Users\Minfy.ABHINANDANKALLU\AppData\Local\Programs\mongosh;C:\Users\Minfy.ABHINANDANKALLU\AppData\Roaming\npm;C:\Users\Minfy.ABHINANDANKALLU\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="java.vm.version" value="17.0.15+6-LTS"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testSpecialChar" classname="test.java.test.StringScannerTest" time="0.003"/>
+  <testcase name="testAll" classname="test.java.test.StringScannerTest" time="0.003"/>
+  <testcase name="testSkipWhitespace" classname="test.java.test.StringScannerTest" time="0.002"/>
+  <testcase name="testDelimeter" classname="test.java.test.StringScannerTest" time="0.002"/>
+</testsuite>

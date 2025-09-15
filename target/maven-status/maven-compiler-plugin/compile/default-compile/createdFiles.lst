@@ -1,0 +1,13 @@
+main\java\mathTree\StringScanner.class
+main\java\mathNode\Sub.class
+main\java\mathNode\Add.class
+main\java\mathNode\Operator.class
+main\java\mathNode\Dec.class
+main\java\mathNode\Factory.class
+main\java\mathTree\MathTree.class
+main\java\mathNode\Int.class
+main\java\mathTree\CalcApp.class
+main\java\mathNode\Mult.class
+main\java\mathNode\Div.class
+main\java\mathNode\Expression.class
+main\java\mathNode\Pow.class
