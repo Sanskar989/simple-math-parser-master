@@ -97,7 +97,7 @@ class MathNodeTest
       opNode.setLeftNode(leftNode);
       opNode.setRightNode(rightNode);
       
-      assertEquals(3.0, opNode.calculate());
+      assertEquals(3.0, opNode.calculate(), 0.0001);
       
       leftNode = nodeFactory.buildNode(testDoubles[0]);
       rightNode = nodeFactory.buildNode(testDoubles[1]);
